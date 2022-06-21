@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {ChangeDetectorRef, Component, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,4 @@ import {Component, HostListener} from '@angular/core';
 })
 export class AppComponent {
   title = 'index';
-
 }
