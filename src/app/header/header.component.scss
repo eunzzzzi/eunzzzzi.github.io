@@ -19,7 +19,7 @@
       height: 100%;
       color: #fff;
       box-sizing: border-box;
-      padding: 20px 4px;
+      padding: 24px;
       text-align: center;
       font-size: 15.5px;
       &-bottom {
@@ -33,6 +33,9 @@
     }
   }
 
+  .side-nav {
+    z-index: 10000000;
+  }
 }
 
 

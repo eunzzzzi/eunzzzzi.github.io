@@ -1,15 +1,30 @@
 <div class="example-container" >
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Responsive App</h1>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <div class="menu-container">
+      <h1>Contents</h1>
+      <mat-tree class="menu" [dataSource]="dataSource" [treeControl]="treeControl">
+        <!-- This is the tree node template for leaf nodes -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+          <!-- use a disabled button to provide padding for tree leaf -->
+          <button mat-icon-button disabled></button>
+          {{node.name}}
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+          <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </button>
+          {{node.name}}
+        </mat-tree-node>
+      </mat-tree>
+    </div>
+  </mat-sidenav>
+  <mat-toolbar class="example-toolbar">
+    <button class="slide-btn" mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
   </mat-toolbar>
 
 
-  <mat-sidenav-container class="example-sidenav-container">
-    <mat-sidenav>
-      <mat-nav-list>
-        <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
-      </mat-nav-list>
-    </mat-sidenav>
-  </mat-sidenav-container>
 </div>
