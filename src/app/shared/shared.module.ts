@@ -13,7 +13,6 @@ import {MatTreeModule} from "@angular/material/tree";
   imports: [
     CommonModule,
     FormsModule,
-    BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,

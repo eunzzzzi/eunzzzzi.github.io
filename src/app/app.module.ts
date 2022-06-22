@@ -9,8 +9,6 @@ import { MainComponent } from './main/main.component';
 import { SideNavComponent } from './header/side-nav/side-nav.component';
 import {ScrollProgressComponent} from "./scroll-progress/scroll-progress.component";
 import {MatTreeModule} from "@angular/material/tree";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 
 
 @NgModule({
@@ -23,7 +21,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     RouterModule,
     AppRoutingModule,
     SharedModule,
